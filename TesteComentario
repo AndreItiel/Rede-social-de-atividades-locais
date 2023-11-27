@@ -1,0 +1,39 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class ComentarioTest {
+
+    @Test
+    void testCriar() {
+        
+        Usuario autor = new Usuario("AutorTeste");
+        Comentario comentario = new Comentario(1, "Texto Teste", autor, "01/01/2023");
+
+        
+        System.setIn(new java.io.ByteArrayInputStream("Novo Texto do Comentário".getBytes()));
+
+        
+        comentario.criar();
+
+        
+        assertEquals("Novo Texto do Comentário", comentario.getTexto());
+    }
+
+    @Test
+    void testEditar() {
+        
+        Usuario autor = new Usuario("AutorTeste");
+        Comentario comentario = new Comentario(1, "Texto Teste", autor, "01/01/2023");
+
+        
+        System.setIn(new java.io.ByteArrayInputStream("Novo Texto do Comentário".getBytes()));
+
+        
+        comentario.editar();
+
+        
+        assertEquals("Novo Texto do Comentário", comentario.getTexto());
+    }
+
+    
+}
