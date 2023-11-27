@@ -37,5 +37,5 @@ class AtividadeTest {
         assertEquals("Nova Data e Hora", atividade.getDataHora());
     }
 
-    // Adicione mais testes para os outros métodos da classe Atividade conforme necessário
+    
 }
