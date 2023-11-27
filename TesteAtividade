@@ -1,0 +1,41 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class AtividadeTest {
+
+    @Test
+    void testCriar() {
+        
+        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", new Localizacao(0.0, 0.0));
+
+        
+        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
+
+        
+        atividade.criar();
+
+        
+        assertEquals("Novo Título", atividade.getTitulo());
+        assertEquals("Nova Descrição", atividade.getDescricao());
+        assertEquals("Nova Data e Hora", atividade.getDataHora());
+    }
+
+    @Test
+    void testEditar() {
+        
+        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", new Localizacao(0.0, 0.0));
+
+        
+        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
+
+        
+        atividade.editar();
+
+        
+        assertEquals("Novo Título", atividade.getTitulo());
+        assertEquals("Nova Descrição", atividade.getDescricao());
+        assertEquals("Nova Data e Hora", atividade.getDataHora());
+    }
+
+    // Adicione mais testes para os outros métodos da classe Atividade conforme necessário
+}
