@@ -8,30 +8,30 @@ public class MainTest {
 
     @Test
     public void testMain() {
-        // Define a entrada simulada do usuário
+        
         String input = "Novo Título\nNova Descrição\n2023-11-26 12:00\n";
 
-        // Configura a entrada simulada
+        
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        // Redefine a saída do console
+        
         resetConsoleOutput();
 
-        // Chama o método main da classe Main
+        
         Main.main(null);
 
-        // Verifica se as mensagens esperadas foram impressas no console
+        
         assertEquals("Usuário criado!\nAtividade publicada!\n" +
                      "Atividade criada!\nPesquisando atividade\n" +
                      "Grupo criado!\nAtividade publicada no grupo", getConsoleOutput());
     }
 
-    // Método auxiliar para redefinir a saída do console
+    
     private void resetConsoleOutput() {
         outContent.reset();
     }
 
-    // Método auxiliar para capturar a saída do console
+    
     private String getConsoleOutput() {
         return outContent.toString().trim();
     }
