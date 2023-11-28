@@ -1,0 +1,46 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class AtividadeTest {
+
+    @Test
+    void testCriar() {
+        // Cria uma atividade com dados fictícios
+        Localizacao localizacao = new Localizacao(0.0, 0.0, "Endereco Teste");
+        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", localizacao);
+
+        // Simula a entrada do usuário usando um InputStream falso
+        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
+
+        // Chama o método criar
+        atividade.criar();
+
+        // Verifica se os dados da atividade foram alterados corretamente
+        assertEquals("Novo Título", atividade.getTitulo());
+        assertEquals("Nova Descrição", atividade.getDescricao());
+        assertEquals("Nova Data e Hora", atividade.getDataHora());
+    }
+
+    @Test
+    void testEditar() {
+        // Cria uma atividade com dados fictícios
+        Localizacao localizacao = new Localizacao(0.0, 0.0, "Endereco Teste");
+        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", localizacao);
+
+        // Simula a entrada do usuário usando um InputStream falso
+        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
+
+        // Chama o método editar
+        atividade.editar();
+
+        // Verifica se os dados da atividade foram alterados corretamente
+        assertEquals("Novo Título", atividade.getTitulo());
+        assertEquals("Nova Descrição", atividade.getDescricao());
+        assertEquals("Nova Data e Hora", atividade.getDataHora());
+    }
+
+    // Adicione mais testes para os outros métodos da classe Atividade conforme necessário
+}
+
+@Test
+public class 
