@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Localizacao implements Gerenciavel {
+public class Localizacao implements Gerenciavel {
     private double latitude;
     private double longitude;
     private String endereco;
