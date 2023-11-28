@@ -84,3 +84,23 @@ class GrupoTest {
 
     // Adicione mais métodos de teste conforme necessário
 }
+
+class GerenciavelTest {
+
+    @Test
+    void testCriar() {
+        Gerenciavel gerenciavel = new Atividade(1, "Aula de Yoga", "Prática de yoga ao ar livre", "2023-11-25 10:00", new Localizacao(10.0, 20.0, "Rua XYZ"));
+
+        gerenciavel.criar();
+
+        // Adicione as verificações necessárias conforme a lógica do seu programa
+        // Por exemplo, você pode verificar se a criação foi bem-sucedida atribuindo valores esperados aos atributos da classe.
+
+        assertEquals("Aula de Yoga", ((Atividade) gerenciavel).getTitulo());
+        assertEquals("Prática de yoga ao ar livre", ((Atividade) gerenciavel).getDescricao());
+        assertEquals("2023-11-25 10:00", ((Atividade) gerenciavel).getDataHora());
+    }
+
+    // Adicione mais métodos de teste conforme necessário
+}
+
