@@ -1,46 +1,68 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AtividadeTest {
+class LocalizacaoTest {
 
     @Test
-    void testCriar() {
-        // Cria uma atividade com dados fictícios
-        Localizacao localizacao = new Localizacao(0.0, 0.0, "Endereco Teste");
-        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", localizacao);
+    void testCriarLocalizacao() {
+        Localizacao localizacao = new Localizacao(10.0, 20.0, "Rua XYZ");
 
-        // Simula a entrada do usuário usando um InputStream falso
-        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
+        localizacao.criar();
 
-        // Chama o método criar
-        atividade.criar();
-
-        // Verifica se os dados da atividade foram alterados corretamente
-        assertEquals("Novo Título", atividade.getTitulo());
-        assertEquals("Nova Descrição", atividade.getDescricao());
-        assertEquals("Nova Data e Hora", atividade.getDataHora());
+        assertEquals(10.0, localizacao.getLatitude());
+        assertEquals(20.0, localizacao.getLongitude());
+        assertEquals("Rua XYZ", localizacao.getEndereco());
     }
 
-    @Test
-    void testEditar() {
-        // Cria uma atividade com dados fictícios
-        Localizacao localizacao = new Localizacao(0.0, 0.0, "Endereco Teste");
-        Atividade atividade = new Atividade(1, "Atividade Teste", "Descrição Teste", "01/01/2023", localizacao);
-
-        // Simula a entrada do usuário usando um InputStream falso
-        System.setIn(new java.io.ByteArrayInputStream("Novo Título\nNova Descrição\nNova Data e Hora".getBytes()));
-
-        // Chama o método editar
-        atividade.editar();
-
-        // Verifica se os dados da atividade foram alterados corretamente
-        assertEquals("Novo Título", atividade.getTitulo());
-        assertEquals("Nova Descrição", atividade.getDescricao());
-        assertEquals("Nova Data e Hora", atividade.getDataHora());
-    }
-
-    // Adicione mais testes para os outros métodos da classe Atividade conforme necessário
+    // Adicione mais métodos de teste conforme necessário
 }
 
-@Test
-public class 
+class UsuarioTest {
+
+    @Test
+    void testCriarUsuario() {
+        Localizacao localizacao = new Localizacao(10.0, 20.0, "Rua XYZ");
+        Usuario usuario = new Usuario(1, "Carlos", "cadou@gmail.com", "senha123", localizacao);
+
+        usuario.criar();
+
+        assertEquals("Carlos", usuario.getNome());
+        assertEquals("cadou@gmail.com", usuario.getEmail());
+        assertEquals("senha123", usuario.getSenha());
+    }
+
+    // Adicione mais métodos de teste conforme necessário
+}
+
+class ComentarioTest {
+
+    @Test
+    void testCriarComentario() {
+        Localizacao localizacao = new Localizacao(10.0, 20.0, "Rua XYZ");
+        Usuario usuario = new Usuario(1, "Carlos", "cadou@gmail.com", "senha123", localizacao);
+        Comentario comentario = new Comentario(1, "Ótima atividade!", usuario, "2023-11-25 12:00");
+
+        comentario.criar();
+
+        assertEquals("Ótima atividade!", comentario.getTexto());
+    }
+
+    // Adicione mais métodos de teste conforme necessário
+}
+
+class GrupoTest {
+
+    @Test
+    void testCriarGrupo() {
+        Localizacao localizacao = new Localizacao(10.0, 20.0, "Rua XYZ");
+        Usuario usuario = new Usuario(1, "Carlos", "cadou@gmail.com", "senha123", localizacao);
+        Grupo grupo = new Grupo(1, "Grupo do Yoga", usuario, "Grupo para praticantes de yoga");
+
+        grupo.criar();
+
+        assertEquals("Grupo do Yoga", grupo.getNome());
+        assertEquals("Grupo para praticantes de yoga", grupo.getDescricao());
+    }
+
+    // Adicione mais métodos de teste conforme necessário
+}
