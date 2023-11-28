@@ -11,12 +11,12 @@ class AtividadeTest {
 
         atividade.criar();
 
-        assertEquals("Aula de Yoga", atividade.getTitulo());
-        assertEquals("Prática de yoga ao ar livre", atividade.getDescricao());
-        assertEquals("2023-11-25 10:00", atividade.getDataHora());
+        Assertions.assertEquals("Aula de Yoga", atividade.getTitulo());
+        Assertions.assertEquals("Prática de yoga ao ar livre", atividade.getDescricao());
+        Assertions.assertEquals("2023-11-25 10:00", atividade.getDataHora());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
 class LocalizacaoTest {
@@ -27,12 +27,12 @@ class LocalizacaoTest {
 
         localizacao.criar();
 
-        assertEquals(10.0, localizacao.getLatitude());
-        assertEquals(20.0, localizacao.getLongitude());
-        assertEquals("Rua XYZ", localizacao.getEndereco());
+        Assertions.assertEquals(10.0, localizacao.getLatitude());
+        Assertions.assertEquals(20.0, localizacao.getLongitude());
+        Assertions.assertEquals("Rua XYZ", localizacao.getEndereco());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
 class UsuarioTest {
@@ -44,12 +44,12 @@ class UsuarioTest {
 
         usuario.criar();
 
-        assertEquals("Carlos", usuario.getNome());
-        assertEquals("cadou@gmail.com", usuario.getEmail());
-        assertEquals("senha123", usuario.getSenha());
+        Assertions.assertEquals("Carlos", usuario.getNome());
+        Assertions.assertEquals("cadou@gmail.com", usuario.getEmail());
+        Assertions.assertEquals("senha123", usuario.getSenha());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
 class ComentarioTest {
@@ -62,10 +62,10 @@ class ComentarioTest {
 
         comentario.criar();
 
-        assertEquals("Ótima atividade!", comentario.getTexto());
+        Assertions.assertEquals("Ótima atividade!", comentario.getTexto());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
 class GrupoTest {
@@ -78,11 +78,11 @@ class GrupoTest {
 
         grupo.criar();
 
-        assertEquals("Grupo do Yoga", grupo.getNome());
-        assertEquals("Grupo para praticantes de yoga", grupo.getDescricao());
+        Assertions.assertEquals("Grupo do Yoga", grupo.getNome());
+        Assertions.assertEquals("Grupo para praticantes de yoga", grupo.getDescricao());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
 class GerenciavelTest {
@@ -93,14 +93,13 @@ class GerenciavelTest {
 
         gerenciavel.criar();
 
-        // Adicione as verificações necessárias conforme a lógica do seu programa
-        // Por exemplo, você pode verificar se a criação foi bem-sucedida atribuindo valores esperados aos atributos da classe.
+        
 
-        assertEquals("Aula de Yoga", ((Atividade) gerenciavel).getTitulo());
-        assertEquals("Prática de yoga ao ar livre", ((Atividade) gerenciavel).getDescricao());
-        assertEquals("2023-11-25 10:00", ((Atividade) gerenciavel).getDataHora());
+        Assertions.assertEquals("Aula de Yoga", ((Atividade) gerenciavel).getTitulo());
+        Assertions.assertEquals("Prática de yoga ao ar livre", ((Atividade) gerenciavel).getDescricao());
+        Assertions.assertEquals("2023-11-25 10:00", ((Atividade) gerenciavel).getDataHora());
     }
 
-    // Adicione mais métodos de teste conforme necessário
+    
 }
 
