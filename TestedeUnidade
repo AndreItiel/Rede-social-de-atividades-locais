@@ -1,6 +1,24 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+class AtividadeTest {
+
+    @Test
+    void testCriarAtividade() {
+        Localizacao localizacao = new Localizacao(10.0, 20.0, "Rua XYZ");
+        Usuario usuario = new Usuario(1, "Carlos", "cadou@gmail.com", "senha123", localizacao);
+        Atividade atividade = new Atividade(1, "Aula de Yoga", "Prática de yoga ao ar livre", "2023-11-25 10:00", localizacao);
+
+        atividade.criar();
+
+        assertEquals("Aula de Yoga", atividade.getTitulo());
+        assertEquals("Prática de yoga ao ar livre", atividade.getDescricao());
+        assertEquals("2023-11-25 10:00", atividade.getDataHora());
+    }
+
+    // Adicione mais métodos de teste conforme necessário
+}
+
 class LocalizacaoTest {
 
     @Test
