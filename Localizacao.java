@@ -18,7 +18,7 @@ public class Localizacao implements Gerenciavel {
         this.latitude = scanner.nextDouble();
         System.out.println("Digite a longitude da localização:");
         this.longitude = scanner.nextDouble();
-        scanner.nextLine();  // Consumir a quebra de linha pendente
+        scanner.nextLine();  
         System.out.println("Digite o endereço da localização:");
         this.endereco = scanner.nextLine();
 
@@ -32,7 +32,7 @@ public class Localizacao implements Gerenciavel {
         this.latitude = scanner.nextDouble();
         System.out.println("Digite a nova longitude da localização:");
         this.longitude = scanner.nextDouble();
-        scanner.nextLine();  // Consumir a quebra de linha pendente
+        scanner.nextLine(); 
         System.out.println("Digite o novo endereço da localização:");
         this.endereco = scanner.nextLine();
 
