@@ -1,14 +1,28 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Gerenciador {
     public static void main(String[] args) {
-        ArrayList<String> usuarios = new ArrayList<>();
-        ArrayList<String> atividades = new ArrayList<>();
-        ArrayList<String> grupos = new ArrayList<>();
-        ArrayList<String> comentarios = new ArrayList<>();
-
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bem-vindo ao sistema!");
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.print("Digite seu e-mail: ");
+        String email = scanner.nextLine();
+        System.out.print("Digite sua senha: ");
+        String senha = scanner.nextLine();
+
+        Usuario usuario = new Usuario(nome, email, senha, null);
+
+        Map<String, ArrayList<String>> gerenciamento = new HashMap<>();
+        gerenciamento.put("Usuários", new ArrayList<>());
+        gerenciamento.put("Atividades", new ArrayList<>());
+        gerenciamento.put("Grupos", new ArrayList<>());
+        gerenciamento.put("Comentários", new ArrayList<>());
+
         int opcao;
 
         do {
@@ -23,16 +37,16 @@ public class Gerenciador {
 
             switch (opcao) {
                 case 1:
-                    gerenciarLista(usuarios, "Usuários", scanner);
+                    gerenciarLista(gerenciamento.get("Usuários"), "Usuários", scanner);
                     break;
                 case 2:
-                    gerenciarLista(atividades, "Atividades", scanner);
+                    gerenciarLista(gerenciamento.get("Atividades"), "Atividades", scanner);
                     break;
                 case 3:
-                    gerenciarLista(grupos, "Grupos", scanner);
+                    gerenciarLista(gerenciamento.get("Grupos"), "Grupos", scanner);
                     break;
                 case 4:
-                    gerenciarLista(comentarios, "Comentários", scanner);
+                    gerenciarLista(gerenciamento.get("Comentários"), "Comentários", scanner);
                     break;
                 case 0:
                     System.out.println("Saindo do programa. Adeus!");
