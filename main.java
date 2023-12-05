@@ -17,7 +17,7 @@ public class Main {
         System.out.print("Digite sua localização (cidade): ");
         String localizacao = scanner.nextLine();
 
-        Perfil perfil = new Perfil(nome, email, senha, localizacao);
+        Usuario usuario = new Usuario(nome, email, senha, localizacao);
 
         Map<String, ArrayList<String>> gerenciamento = new HashMap<>();
         gerenciamento.put("Usuários", new ArrayList<>());
